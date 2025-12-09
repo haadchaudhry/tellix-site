@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import GA from "./GA"; // <-- ADD THIS LINE
 
 export const metadata: Metadata = {
   title: "Tellix · AI that talks like a human",
@@ -16,9 +17,14 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
       </head>
       <body className="antialiased">
+        <GA />        {/* <-- ADD THIS LINE */}
         {children}
       </body>
     </html>
