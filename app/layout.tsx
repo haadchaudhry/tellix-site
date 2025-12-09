@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import GA from "./GA"; // <-- ADD THIS LINE
+import GA from "./GA";
+import { Suspense } from "react";   // 👈 ADD THIS
 
 export const metadata: Metadata = {
   title: "Tellix · AI that talks like a human",
@@ -24,7 +25,9 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased">
-        <GA />        {/* <-- ADD THIS LINE */}
+        <Suspense fallback={null}>
+          <GA />
+        </Suspense>
         {children}
       </body>
     </html>
