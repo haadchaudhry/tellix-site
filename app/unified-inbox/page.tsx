@@ -2,40 +2,39 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { AgentCanvasStep } from "@/components/agentCanvasTypes";
-import { AgentCanvasSteps } from "@/components/AgentCanvasSteps";
-import { AgentCanvasPreview } from "@/components/AgentCanvasPreview";
+import { UnifiedInboxStep } from "@/components/unifiedInboxTypes";
+import { UnifiedInboxSteps } from "@/components/UnifiedInboxSteps";
+import { UnifiedInboxPreview } from "@/components/UnifiedInboxPreview";
 
 const steps = [
   {
-    id: "create" as AgentCanvasStep,
-    title: "Create the agent",
-    subtitle: "Upload docs, define persona, pick channels",
+    id: "inbox" as UnifiedInboxStep,
+    title: "Unified Inbox",
+    subtitle: "All channels in one place: email, SMS, social DMs",
+    icon: "📥",
   },
   {
-    id: "policies" as AgentCanvasStep,
-    title: "Define policies",
-    subtitle: "Guardrails, escalation rules, spending limits",
+    id: "voice" as UnifiedInboxStep,
+    title: "Voice Calls",
+    subtitle: "Monitor live calls, AI handling, take over when needed",
+    icon: "📞",
   },
   {
-    id: "logic" as AgentCanvasStep,
-    title: "Design the logic",
-    subtitle: "Drag-and-drop flow builder, branching, APIs",
+    id: "reviews" as UnifiedInboxStep,
+    title: "Reviews & Ratings",
+    subtitle: "Track reviews, auto-respond with AI, sentiment analysis",
+    icon: "⭐",
   },
   {
-    id: "test" as AgentCanvasStep,
-    title: "Test and launch",
-    subtitle: "AI simulations, A/B tests, instant rollback",
-  },
-  {
-    id: "monitor" as AgentCanvasStep,
-    title: "Monitor and improve",
-    subtitle: "Real-time dashboards, AI-driven suggestions",
+    id: "analytics" as UnifiedInboxStep,
+    title: "Analytics",
+    subtitle: "Real-time metrics, CSAT scores, channel breakdown",
+    icon: "📊",
   },
 ];
 
-export default function AgentCanvasPage() {
-  const [activeStep, setActiveStep] = useState<AgentCanvasStep>("create");
+export default function UnifiedInboxPage() {
+  const [activeStep, setActiveStep] = useState<UnifiedInboxStep>("inbox");
 
   return (
     <main className="min-h-screen bg-[#0a0a0a] text-white">
@@ -78,33 +77,33 @@ export default function AgentCanvasPage() {
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center gap-3 mb-6">
             <div className="grid grid-cols-2 gap-1">
-              <div className="w-2 h-2 bg-white rounded-sm" />
-              <div className="w-2 h-2 bg-white rounded-sm" />
-              <div className="w-2 h-2 bg-white rounded-sm" />
-              <div className="w-2 h-2 bg-white rounded-sm" />
+              <div className="w-2 h-2 bg-rose-300 rounded-sm" />
+              <div className="w-2 h-2 bg-sky-300 rounded-sm" />
+              <div className="w-2 h-2 bg-blue-400 rounded-sm" />
+              <div className="w-2 h-2 bg-indigo-400 rounded-sm" />
             </div>
-            <span className="rainbow-text text-sm font-medium uppercase tracking-wider">Agent Canvas</span>
+            <span className="rainbow-text text-sm font-medium uppercase tracking-wider">Unified Inbox</span>
           </div>
           <h1 className="font-sans text-5xl md:text-6xl lg:text-7xl font-semibold mb-6 text-white">
-            Build, test, and deploy
+            Every conversation,
             <br />
             <span className="gradient-text-retell">
-              production-ready AI agents
+              one beautiful place
             </span>
           </h1>
           <p className="text-gray-400 text-lg max-w-2xl mb-8">
-            The fastest way to build, govern, and scale enterprise AI agents. No coding required — just drag, drop, and deploy.
+            Email, SMS, voice calls, social DMs, and reviews — all unified in a single workspace. AI suggests responses, tracks sentiment, and surfaces issues automatically.
           </p>
         </div>
       </section>
 
-      {/* Interactive Canvas Section */}
+      {/* Interactive Inbox Section */}
       <section className="py-16 px-6 bg-[#0a0a0a]">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row gap-12">
             {/* Left side - Step selector */}
             <div className="lg:w-[340px] flex-shrink-0">
-              <AgentCanvasSteps
+              <UnifiedInboxSteps
                 steps={steps}
                 activeStep={activeStep}
                 onStepChange={setActiveStep}
@@ -113,7 +112,7 @@ export default function AgentCanvasPage() {
 
             {/* Right side - Live Preview */}
             <div className="flex-1 min-h-[500px] lg:min-h-[600px]">
-              <AgentCanvasPreview activeStep={activeStep} />
+              <UnifiedInboxPreview activeStep={activeStep} />
             </div>
           </div>
         </div>
@@ -123,10 +122,10 @@ export default function AgentCanvasPage() {
       <section className="py-24 px-6 bg-[#0a0a0a] border-t border-white/5">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="font-sans text-4xl md:text-5xl font-semibold mb-6 text-white">
-            Ready to build your first agent?
+            Ready to unify your support?
           </h2>
           <p className="text-gray-400 mb-10 max-w-2xl mx-auto">
-            Start building production-ready AI agents in minutes. No credit card required.
+            Stop switching between tools. See all your customer conversations in one place.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link href="/#contact" className="btn-primary btn-shimmer px-8 py-4 text-lg">
@@ -141,3 +140,4 @@ export default function AgentCanvasPage() {
     </main>
   );
 }
+

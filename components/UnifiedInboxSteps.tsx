@@ -1,23 +1,24 @@
 "use client";
 
-import { AgentCanvasStep } from "./agentCanvasTypes";
+import { UnifiedInboxStep } from "./unifiedInboxTypes";
 import { motion } from "framer-motion";
 
 type StepMeta = {
-  id: AgentCanvasStep;
+  id: UnifiedInboxStep;
   title: string;
   subtitle: string;
+  icon: string;
 };
 
 type Props = {
   steps: StepMeta[];
-  activeStep: AgentCanvasStep;
-  onStepChange: (id: AgentCanvasStep) => void;
+  activeStep: UnifiedInboxStep;
+  onStepChange: (id: UnifiedInboxStep) => void;
 };
 
 const indicatorGradient = "rainbow-indicator";
 
-export function AgentCanvasSteps({ steps, activeStep, onStepChange }: Props) {
+export function UnifiedInboxSteps({ steps, activeStep, onStepChange }: Props) {
   return (
     <div className="space-y-4">
       {steps.map((step) => {
@@ -42,13 +43,16 @@ export function AgentCanvasSteps({ steps, activeStep, onStepChange }: Props) {
                   }`}
                 />
               </div>
-              <div className="space-y-1">
-                <div
-                  className={`text-base font-semibold ${
-                    isActive ? "text-white" : "text-gray-400"
-                  }`}
-                >
-                  {step.title}
+              <div className="flex-1 space-y-1">
+                <div className="flex items-center gap-2">
+                  <span className="text-lg">{step.icon}</span>
+                  <div
+                    className={`text-base font-semibold ${
+                      isActive ? "text-white" : "text-gray-400"
+                    }`}
+                  >
+                    {step.title}
+                  </div>
                 </div>
                 <div className="text-sm text-gray-500">{step.subtitle}</div>
               </div>
@@ -59,11 +63,4 @@ export function AgentCanvasSteps({ steps, activeStep, onStepChange }: Props) {
     </div>
   );
 }
-
-
-
-
-
-
-
 

@@ -38,7 +38,7 @@ export function AgentMonitorPreview() {
             <div className="flex items-center gap-3">
               <button className="w-9 h-9 rounded-full bg-white/10 border border-white/10 text-white">⏯</button>
               <div className="flex-1 h-2 rounded-full bg-white/10 overflow-hidden">
-                <div className="h-full w-1/3 bg-gradient-to-r from-cyan-400 to-purple-500" />
+                <div className="h-full w-1/3 bg-gradient-to-r from-rose-300 to-sky-400" />
               </div>
               <div className="text-xs text-gray-400">0:19 / 1:48</div>
             </div>
@@ -63,7 +63,7 @@ export function AgentMonitorPreview() {
 
           <div className="space-y-3">
             <div className="flex items-start gap-3">
-              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-cyan-400 to-purple-500 flex items-center justify-center text-xs font-bold text-black">
+              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-rose-300 to-sky-400 flex items-center justify-center text-xs font-bold text-black">
                 AI
               </div>
               <div className="bg-white/5 border border-white/10 rounded-2xl rounded-tl-none px-4 py-3 text-sm text-white max-w-xl">
@@ -102,6 +102,7 @@ export function AgentMonitorPreview() {
     </motion.div>
   );
 }
+
 
 
 

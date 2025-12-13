@@ -39,7 +39,7 @@ export function AgentPoliciesPreview() {
             <div className="relative">
               <input
                 placeholder="Search..."
-                className="w-full px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-sm text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/60"
+                className="w-full px-3 py-2 rounded-lg bg-white/5 border border-white/10 text-sm text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-rose-300/60"
               />
               <span className="absolute right-3 top-2.5 text-gray-400 text-xs">⌕</span>
             </div>
@@ -90,7 +90,7 @@ export function AgentPoliciesPreview() {
                 <div
                   key={item.title}
                   className={`flex items-center justify-between px-3 py-2 rounded-lg border ${
-                    item.active ? "border-cyan-400/40 bg-white/5 text-white" : "border-white/5 bg-white/5 text-gray-300"
+                    item.active ? "border-rose-300/40 bg-white/5 text-white" : "border-white/5 bg-white/5 text-gray-300"
                   }`}
                 >
                   <span>{item.title}</span>
@@ -133,6 +133,7 @@ export function AgentPoliciesPreview() {
     </motion.div>
   );
 }
+
 
 
 

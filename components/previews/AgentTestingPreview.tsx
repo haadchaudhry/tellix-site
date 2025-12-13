@@ -37,7 +37,7 @@ export function AgentTestingPreview() {
       <div className="rounded-2xl border border-white/10 bg-white/10 backdrop-blur-xl shadow-2xl overflow-hidden">
         <div className="flex items-center justify-between px-4 py-3 border-b border-white/5">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-emerald-400 via-cyan-500 to-blue-500 shadow-lg" />
+            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-rose-300 via-orange-200 to-sky-300 shadow-lg" />
             <div>
               <div className="text-sm font-semibold text-white">Tellix support agent</div>
               <div className="text-xs text-gray-400">Test suite</div>
@@ -79,6 +79,7 @@ export function AgentTestingPreview() {
     </motion.div>
   );
 }
+
 
 
 

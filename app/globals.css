@@ -4,10 +4,14 @@
 :root {
   --background: #0a0a0a;
   --foreground: #ffffff;
-  --cyan-glow: #00ffd5;
-  --cyan-dim: rgba(0, 255, 213, 0.5);
-  --pink: #ff6b9d;
-  --purple: #c084fc;
+  /* Soft pastel palette */
+  --coral-rose: #f4a5a5;
+  --peach: #fcd5bf;
+  --apricot: #fde2cf;
+  --lavender: #d4c4e8;
+  --lilac: #c9b8e8;
+  --sky-blue: #a8d4e6;
+  --icy-blue: #c5e4f3;
 }
 
 @theme inline {
@@ -39,7 +43,7 @@ body {
   font-family: 'Instrument Serif', Georgia, serif;
 }
 
-/* Animated gradient text like Retell */
+/* Animated gradient text - Soft Pastel Flow */
 @keyframes gradient-flow {
   0% {
     background-position: 0% 50%;
@@ -55,19 +59,60 @@ body {
 .gradient-text-retell {
   background: linear-gradient(
     90deg,
-    #7dd3fc 0%,
-    #a5b4fc 25%,
-    #c4b5fd 40%,
-    #f0abfc 55%,
-    #fda4af 70%,
-    #fdba74 85%,
-    #fcd34d 100%
+    #e07878 0%,
+    #e89888 15%,
+    #e8a888 30%,
+    #d8a888 45%,
+    #c8a0c0 55%,
+    #a898c8 70%,
+    #88a0c8 85%,
+    #68a8c8 100%
   );
   background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: gradient-flow 4s ease infinite;
+  animation: gradient-flow 6s ease infinite;
+}
+
+/* Soft pastel gradient for accent elements */
+.pastel-gradient {
+  background: linear-gradient(
+    90deg,
+    #f4a5a5,
+    #fcd5bf,
+    #fde2cf,
+    #d4c4e8,
+    #a8d4e6
+  );
+}
+
+.pastel-gradient-animated {
+  background: linear-gradient(
+    90deg,
+    #f4a5a5,
+    #fcd5bf,
+    #fde2cf,
+    #d4c4e8,
+    #a8d4e6,
+    #f4a5a5
+  );
+  background-size: 200% 200%;
+  animation: gradient-flow 6s ease infinite;
+}
+
+/* Soft pastel text gradient */
+.pastel-text {
+  background: linear-gradient(
+    90deg,
+    #f4a5a5,
+    #fcd5bf,
+    #d4c4e8,
+    #a8d4e6
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* Custom scrollbar */
@@ -88,7 +133,7 @@ body {
   background: #444;
 }
 
-/* Animated gradient background */
+/* Animated soft gradient background */
 @keyframes gradient-animation {
   0% {
     background-position: 0% 50%;
@@ -104,11 +149,11 @@ body {
 .animated-gradient {
   background: linear-gradient(
     -45deg,
-    #ff6b9d,
-    #c084fc,
-    #00ffd5,
-    #0ea5e9,
-    #ff6b9d
+    #f4a5a5,
+    #fcd5bf,
+    #fde2cf,
+    #d4c4e8,
+    #a8d4e6
   );
   background-size: 400% 400%;
   animation: gradient-animation 15s ease infinite;
@@ -116,15 +161,8 @@ body {
 
 /* 
   Wave Animation Keyframes
-  These create the Retell AI-style animated gradient ribbon effect
 */
 
-/* 
-  wave-move: Horizontal drift animation
-  - Slowly moves the ribbon left and right
-  - Creates sense of gentle flow
-  - 25 second duration for very slow, smooth motion
-*/
 @keyframes wave-move {
   0%, 100% {
     transform: translateX(-5%);
@@ -134,12 +172,6 @@ body {
   }
 }
 
-/* 
-  wave-float: Vertical breathing animation
-  - Subtle up/down movement
-  - Combined with horizontal drift for organic feel
-  - 12 second cycle, slightly faster than horizontal
-*/
 @keyframes wave-float {
   0%, 100% {
     transform: translate(-50%, -50%) translateY(0px);
@@ -155,11 +187,6 @@ body {
   }
 }
 
-/* 
-  wave-glow: Pulsing glow animation
-  - Subtle opacity changes on the blur layer
-  - Creates breathing/pulsing glow effect
-*/
 @keyframes wave-glow {
   0%, 100% {
     opacity: 0.3;
@@ -169,11 +196,6 @@ body {
   }
 }
 
-/* 
-  wave-drift: Horizontal drift animation for the SVG
-  - Creates smooth left-right movement
-  - 30 second cycle for very slow, calming motion
-*/
 @keyframes wave-drift {
   0%, 100% {
     transform: translateX(-3%);
@@ -183,11 +205,6 @@ body {
   }
 }
 
-/*
-  wave-morph: Subtle path morphing illusion
-  - Small scale changes create flowing feel
-  - Combined with other animations for organic look
-*/
 @keyframes wave-morph {
   0%, 100% {
     transform: scaleY(1) translateY(0);
@@ -243,19 +260,7 @@ body {
   animation: wave-morph-reverse 18s ease-in-out infinite;
 }
 
-/* 
-  ===========================================
-  RETELL AI WAVE ANIMATIONS
-  ===========================================
-  These create the smooth, flowing ribbon effect
-  seen on Retell AI's landing page.
-*/
-
-/*
-  Horizontal Drift - Slow (Background Layer)
-  - 40 second cycle for barely perceptible movement
-  - Moves ribbon left-right by 3%
-*/
+/* Retell wave animations */
 @keyframes retell-drift-slow {
   0%, 100% {
     transform: translateX(-3%) translateY(0px);
@@ -271,11 +276,6 @@ body {
   }
 }
 
-/*
-  Horizontal Drift - Medium (Middle Layer)
-  - 30 second cycle
-  - Offset timing from slow layer creates parallax
-*/
 @keyframes retell-drift-medium {
   0%, 100% {
     transform: translateX(2%) translateY(0px);
@@ -291,11 +291,6 @@ body {
   }
 }
 
-/*
-  Horizontal Drift - Fast (Front Layer)
-  - 25 second cycle - slightly faster
-  - Combined with vertical wave for organic feel
-*/
 @keyframes retell-drift-fast {
   0%, 100% {
     transform: translateX(-2%) translateY(5px);
@@ -308,7 +303,6 @@ body {
   }
 }
 
-/* Animation utility classes for Retell wave */
 .animate-retell-drift-slow {
   animation: retell-drift-slow 24s ease-in-out infinite;
 }
@@ -321,7 +315,7 @@ body {
   animation: retell-drift-fast 12s ease-in-out infinite;
 }
 
-/* Voice demo rings (ChatGPT-like talking) */
+/* Voice demo rings - soft pastel glow */
 @keyframes voice-ring-slow {
   0% {
     transform: scale(0.85);
@@ -343,16 +337,17 @@ body {
 
 @keyframes voice-pulse {
   0%, 100% {
-    box-shadow: 0 0 30px rgba(103, 232, 249, 0.4), 0 0 60px rgba(180, 180, 255, 0.2);
+    box-shadow: 0 0 40px rgba(244, 165, 165, 0.25), 0 0 80px rgba(212, 196, 232, 0.15), 0 0 120px rgba(168, 212, 230, 0.1);
   }
   50% {
-    box-shadow: 0 0 45px rgba(103, 232, 249, 0.6), 0 0 90px rgba(180, 180, 255, 0.3);
+    box-shadow: 0 0 60px rgba(244, 165, 165, 0.35), 0 0 100px rgba(212, 196, 232, 0.25), 0 0 150px rgba(168, 212, 230, 0.15);
   }
 }
 
 .animate-voice-pulse {
-  animation: voice-pulse 3s ease-in-out infinite;
+  animation: voice-pulse 4s ease-in-out infinite;
 }
+
 /* Animations */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
@@ -361,10 +356,10 @@ body {
 
 @keyframes pulse-glow {
   0%, 100% { 
-    box-shadow: 0 0 60px rgba(0, 255, 213, 0.4), 0 0 120px rgba(0, 255, 213, 0.2);
+    box-shadow: 0 0 60px rgba(244, 165, 165, 0.2), 0 0 120px rgba(212, 196, 232, 0.15);
   }
   50% { 
-    box-shadow: 0 0 80px rgba(0, 255, 213, 0.6), 0 0 160px rgba(0, 255, 213, 0.3);
+    box-shadow: 0 0 80px rgba(244, 165, 165, 0.3), 0 0 160px rgba(212, 196, 232, 0.2);
   }
 }
 
@@ -393,7 +388,7 @@ body {
 }
 
 .animate-pulse-glow {
-  animation: pulse-glow 3s ease-in-out infinite;
+  animation: pulse-glow 4s ease-in-out infinite;
 }
 
 .animate-fade-in {
@@ -411,25 +406,26 @@ body {
 .delay-400 { animation-delay: 400ms; }
 .delay-500 { animation-delay: 500ms; }
 
-/* Voice orb - Giga style */
+/* Voice orb - Soft pastel style */
 .voice-orb {
   position: relative;
   width: 280px;
   height: 280px;
   border-radius: 50%;
-  background: radial-gradient(circle at 50% 50%, 
-    rgba(0, 255, 213, 0.9) 0%, 
-    rgba(0, 255, 213, 0.6) 30%,
-    rgba(0, 255, 213, 0.3) 60%,
-    rgba(0, 255, 213, 0.1) 80%,
-    transparent 100%
+  background: linear-gradient(
+    135deg,
+    rgba(244, 165, 165, 0.8) 0%,
+    rgba(252, 213, 191, 0.7) 25%,
+    rgba(253, 226, 207, 0.6) 50%,
+    rgba(212, 196, 232, 0.7) 75%,
+    rgba(168, 212, 230, 0.8) 100%
   );
   box-shadow: 
-    0 0 60px rgba(0, 255, 213, 0.5),
-    0 0 120px rgba(0, 255, 213, 0.3),
-    0 0 200px rgba(0, 255, 213, 0.2),
-    inset 0 0 60px rgba(255, 255, 255, 0.1);
-  animation: pulse-glow 3s ease-in-out infinite, subtle-pulse 4s ease-in-out infinite;
+    0 0 60px rgba(244, 165, 165, 0.3),
+    0 0 120px rgba(212, 196, 232, 0.2),
+    0 0 200px rgba(168, 212, 230, 0.15),
+    inset 0 0 60px rgba(255, 255, 255, 0.2);
+  animation: pulse-glow 4s ease-in-out infinite, subtle-pulse 4s ease-in-out infinite;
 }
 
 .voice-orb::before {
@@ -438,8 +434,8 @@ body {
   inset: 20%;
   border-radius: 50%;
   background: radial-gradient(circle at 30% 30%, 
-    rgba(255, 255, 255, 0.4) 0%,
-    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
     transparent 70%
   );
 }
@@ -455,7 +451,7 @@ body {
 
 .wave-bar {
   width: 3px;
-  background: rgba(0, 50, 40, 0.8);
+  background: rgba(80, 60, 70, 0.6);
   border-radius: 2px;
   animation: wave-bar 0.6s ease-in-out infinite;
 }
@@ -475,7 +471,7 @@ body {
   color: #1a1a1a;
 }
 
-/* Accordion item */
+/* Accordion item with soft pastel accent */
 .accordion-item {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding: 20px 0;
@@ -489,7 +485,8 @@ body {
 
 .accordion-item.active {
   background: rgba(255, 255, 255, 0.03);
-  border-left: 2px solid var(--cyan-glow);
+  border-left: 2px solid;
+  border-image: linear-gradient(to bottom, #f4a5a5, #fcd5bf, #d4c4e8, #a8d4e6) 1;
   padding-left: 16px;
   margin-left: -16px;
   padding-right: 16px;
@@ -528,7 +525,7 @@ body {
 }
 
 .btn-primary:hover {
-  background: #e5e5e5;
+  background: #f5f5f5;
   transform: translateY(-2px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
@@ -575,15 +572,17 @@ body {
   border-radius: 50%;
 }
 
-/* Green accent text */
+/* Accent text with soft gradient */
 .text-accent {
-  color: #4ade80;
+  color: #d4c4e8;
 }
 
-/* Cyan glow text */
-.text-cyan-glow {
-  color: var(--cyan-glow);
-  text-shadow: 0 0 20px rgba(0, 255, 213, 0.5);
+/* Soft pastel glow text */
+.text-pastel-glow {
+  background: linear-gradient(90deg, #f4a5a5, #fcd5bf, #d4c4e8, #a8d4e6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* Modal styles */
@@ -631,7 +630,7 @@ body {
   animation: shimmer 2s infinite;
 }
 
-/* Feature card hover */
+/* Feature card hover - soft pastel gradient border */
 .feature-card {
   background: #111;
   border: 1px solid rgba(255, 255, 255, 0.05);
@@ -641,47 +640,62 @@ body {
 }
 
 .feature-card:hover {
-  border-color: rgba(0, 255, 213, 0.3);
+  border-color: transparent;
+  background: linear-gradient(#111, #111) padding-box,
+              linear-gradient(135deg, #f4a5a5, #fcd5bf, #d4c4e8, #a8d4e6) border-box;
+  border: 1px solid transparent;
   transform: translateY(-4px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
-/* Stat counter */
+/* Stat counter - Soft pastel gradient */
 .stat-number {
   font-size: 4rem;
   font-weight: 300;
   line-height: 1;
-  background: linear-gradient(135deg, #00ffd5, #0ea5e9);
+  background: linear-gradient(135deg, #f4a5a5, #fcd5bf, #d4c4e8, #a8d4e6);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-flow 6s ease infinite;
+}
+
+/* Voice orb with animated soft gradient */
+.voice-orb-animated {
+  background: linear-gradient(
+    135deg,
+    rgba(244, 165, 165, 0.9),
+    rgba(252, 213, 191, 0.8),
+    rgba(253, 226, 207, 0.7),
+    rgba(212, 196, 232, 0.8),
+    rgba(168, 212, 230, 0.9)
+  );
+  background-size: 300% 300%;
+  animation: gradient-flow 6s ease infinite;
+}
+
+/* Soft pastel indicator gradient */
+.pastel-indicator {
+  background: linear-gradient(to bottom, #f4a5a5, #fcd5bf, #d4c4e8, #a8d4e6);
+}
+
+/* Rainbow indicator - now soft pastel */
+.rainbow-indicator {
+  background: linear-gradient(to bottom, #f4a5a5, #fcd5bf, #d4c4e8, #a8d4e6);
+}
+
+/* Rainbow text - now soft pastel */
+.rainbow-text {
+  background: linear-gradient(
+    90deg,
+    #f4a5a5,
+    #fcd5bf,
+    #d4c4e8,
+    #a8d4e6
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Voice orb with animated gradient like hero text */
-.voice-orb-animated {
-  background: linear-gradient(
-    135deg,
-    #7dd3fc 0%,
-    #a5b4fc 15%,
-    #c4b5fd 30%,
-    #f0abfc 45%,
-    #fda4af 60%,
-    #fdba74 75%,
-    #fcd34d 90%,
-    #7dd3fc 100%
-  );
-  background-size: 300% 300%;
-  animation: voice-gradient-flow 6s ease infinite;
-}
-
-@keyframes voice-gradient-flow {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}

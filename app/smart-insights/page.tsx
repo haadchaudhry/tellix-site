@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function SmartInsightsPage() {
   const [activeTab, setActiveTab] = useState(0);
 
-  type MockTone = "blue" | "teal" | "purple" | "indigo" | "cyan" | "pink" | "orange";
+  type MockTone = "blue" | "rose" | "purple" | "indigo" | "coral" | "pink" | "orange";
 
   function MockShot({
     tone,
@@ -19,10 +19,10 @@ export default function SmartInsightsPage() {
   }) {
     const palette: Record<MockTone, string> = {
       blue: "from-sky-200 via-indigo-200 to-purple-200",
-      teal: "from-teal-200 via-cyan-200 to-blue-200",
+      rose: "from-rose-200 via-pink-200 to-red-200",
       purple: "from-purple-200 via-violet-200 to-pink-200",
       indigo: "from-indigo-200 via-slate-200 to-sky-200",
-      cyan: "from-cyan-200 via-blue-200 to-indigo-200",
+      coral: "from-orange-200 via-amber-200 to-yellow-200",
       pink: "from-pink-200 via-rose-200 to-amber-200",
       orange: "from-amber-200 via-orange-200 to-rose-200",
     };
@@ -95,12 +95,12 @@ export default function SmartInsightsPage() {
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center gap-3 mb-6">
             <MockShot tone="indigo" className="w-10 h-6" />
-            <span className="text-cyan-400 text-sm font-medium uppercase tracking-wider">Intelligence Dashboard</span>
+            <span className="rainbow-text text-sm font-medium uppercase tracking-wider">Intelligence Dashboard</span>
           </div>
           <h1 className="font-sans text-5xl md:text-6xl lg:text-7xl font-semibold mb-6 text-white">
             Understand what&apos;s driving
             <br />
-            <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <span className="gradient-text-retell">
               customer conversations
             </span>
           </h1>
@@ -121,7 +121,7 @@ export default function SmartInsightsPage() {
                 onClick={() => setActiveTab(i)}
                 className={`px-6 py-3 text-sm font-medium transition-all border-b-2 ${
                   activeTab === i 
-                    ? 'border-cyan-400 text-cyan-400' 
+                    ? 'border-pink-400 text-pink-400' 
                     : 'border-transparent text-gray-500 hover:text-gray-300'
                 }`}
               >
@@ -240,7 +240,7 @@ export default function SmartInsightsPage() {
                           <span className="text-sm">{item.channel}</span>
                           <div className="flex items-center gap-2">
                             <span className="text-xs text-gray-500">{item.volume}</span>
-                            <span className="text-xs text-cyan-400">★ {item.satisfaction}</span>
+                            <span className="text-xs text-pink-400">★ {item.satisfaction}</span>
                           </div>
                         </div>
                       ))}
@@ -262,7 +262,7 @@ export default function SmartInsightsPage() {
                         <div className="font-medium mb-1">{report.name}</div>
                         <div className="text-sm text-gray-400">Last run: {report.lastRun}</div>
                       </div>
-                      <button className="text-sm text-cyan-400 hover:text-cyan-300 px-4 py-2 border border-cyan-400/30 rounded-lg hover:bg-cyan-400/10 transition-all">
+                      <button className="text-sm text-pink-400 hover:text-pink-300 px-4 py-2 border border-pink-400/30 rounded-lg hover:bg-pink-400/10 transition-all">
                         View
                       </button>
                     </div>
@@ -304,7 +304,7 @@ export default function SmartInsightsPage() {
                 <ul className="space-y-2">
                   {feature.features.map((f, j) => (
                     <li key={j} className="flex items-start gap-2 text-xs text-gray-500">
-                      <span className="text-cyan-400 mt-1">•</span>
+                      <span className="text-pink-400 mt-1">•</span>
                       <span>{f}</span>
                     </li>
                   ))}

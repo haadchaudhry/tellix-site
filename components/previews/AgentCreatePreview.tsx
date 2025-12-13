@@ -26,7 +26,7 @@ export function AgentCreatePreview() {
         {/* Top bar */}
         <div className="flex items-center justify-between px-4 py-3 border-b border-white/5">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-500 shadow-lg" />
+            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-rose-300 via-orange-200 to-sky-300 shadow-lg" />
             <div>
               <div className="text-sm font-semibold text-white">Create new agent</div>
               <div className="text-xs text-gray-400">Draft</div>
@@ -45,7 +45,7 @@ export function AgentCreatePreview() {
               key={tab}
               className={`px-3 py-1.5 rounded-full ${
                 idx === 0
-                  ? "bg-gradient-to-r from-cyan-400/30 to-purple-400/30 text-white border border-white/10"
+                  ? "bg-gradient-to-r from-rose-300/30 to-sky-300/30 text-white border border-white/10"
                   : "text-gray-400 hover:text-white hover:bg-white/5"
               }`}
             >
@@ -109,7 +109,7 @@ export function AgentCreatePreview() {
             <button className="text-sm text-gray-300 hover:text-white">Cancel</button>
             <div className="flex items-center gap-3">
               <span className="text-xs text-gray-400">Autosaving draft</span>
-              <button className="px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-400 to-purple-500 text-sm font-semibold text-black shadow-lg">
+              <button className="px-4 py-2 rounded-lg bg-gradient-to-r from-rose-300 to-sky-400 text-sm font-semibold text-black shadow-lg">
                 Create agent
               </button>
             </div>
@@ -119,6 +119,7 @@ export function AgentCreatePreview() {
     </motion.div>
   );
 }
+
 
 
 

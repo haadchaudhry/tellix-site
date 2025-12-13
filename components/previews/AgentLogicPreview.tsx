@@ -37,7 +37,7 @@ export function AgentLogicPreview() {
       <div className="rounded-2xl border border-white/10 bg-white/10 backdrop-blur-xl shadow-2xl overflow-hidden">
         <div className="flex items-center justify-between px-4 py-3 border-b border-white/5">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-400 via-blue-500 to-cyan-500 shadow-lg" />
+            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-rose-300 via-orange-200 to-sky-300 shadow-lg" />
             <div>
               <div className="text-sm font-semibold text-white">Tellix AI support agent</div>
               <div className="text-xs text-gray-400">Multi-modal</div>
@@ -92,7 +92,7 @@ export function AgentLogicPreview() {
           </ScenarioBlock>
 
           <div className="flex justify-end">
-            <div className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-cyan-200">
+            <div className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-rose-200">
               Mark Derek editing…
             </div>
           </div>
@@ -101,6 +101,7 @@ export function AgentLogicPreview() {
     </motion.div>
   );
 }
+
 
 
 

@@ -99,9 +99,9 @@ export default function PrivacyPage() {
 
       {/* Hero for this page */}
       <section className="relative overflow-hidden border-b border-gray-200">
-        <div className="absolute inset-0 bg-gradient-to-r from-cyan-100 via-purple-100 to-pink-100 opacity-70 blur-3xl" />
+        <div className="absolute inset-0 bg-gradient-to-r from-pink-100 via-orange-100 to-amber-100 opacity-70 blur-3xl" />
         <div className="max-w-5xl mx-auto px-6 py-16 relative">
-          <p className="text-sm font-semibold text-cyan-600 uppercase tracking-wide">
+          <p className="text-sm font-semibold text-pink-600 uppercase tracking-wide">
             Privacy & Security
           </p>
           <h1 className="text-4xl md:text-5xl font-semibold text-gray-900 mt-2 mb-3">
