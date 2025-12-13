@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import RetellWave from "@/components/RetellWave";
-import AgentCanvasSection from "@/components/AgentCanvasSection";
 
 type MockTone = "blue" | "teal" | "purple" | "indigo" | "cyan" | "pink" | "orange";
 
@@ -364,8 +363,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Agent Canvas Section (Giga/Retell-inspired) */}
-      <AgentCanvasSection />
 
       {/* Features Section */}
       <section id="features" className="py-24 px-6 bg-white text-black">
